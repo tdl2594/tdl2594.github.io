@@ -6,6 +6,7 @@ nav {
   display: inline-flex;
   list-style: none;
   align-items: center;
+  width: 100%;
   ul {
     display: flex;
     list-style: none;
@@ -28,6 +29,7 @@ nav a:hover {
   nav {
     display: block;
     text-align: center;
+    .inner {overflow: hidden;}
   }
 }
 
