@@ -1,26 +1,35 @@
 body {
-    max-width: 1340px;
-    min-width: 1000px;
     margin: 0 auto;
-    background-color: #c4bfba;
+    background-color: #f2ece5;
     color: #111;
-    font-family: Arial, Helvetica, sans-serif;
     align-items: center;
 }
 img{
     max-width: 100%;
     height: auto;
 }
+a:hover img {
+    scale: 1.05;
+    transition: scale 0.3s;
+}
+
+p {
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #111;
+    font-family: "Arial", Sans-serif;
+}
 
 header, main, footer {
-    max-width: 1340px;
+    max-width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
 }
+
+
 /* this is Navigation bar */
 header {
-    max-width: 1340px;
-    min-width: 1000px;
     margin: auto;
     height: 70px;
     padding: 0 40px;
@@ -31,8 +40,9 @@ header {
 }
 #logo img {
     display: block;
-    width: 80px;
-    height:auto;   
+    width: 35px;
+    height:auto; 
+    padding: 0px 30px 0 0px;
 }
 #logo a {
     color: #111;
@@ -73,14 +83,19 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
+    background-image: url(/images/centralPA/mountains.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 #hero h1 { /*styles Discover Central PA*/
     color:#eee;
     margin: 0 0 30px;
-    font-size: 60px;
+    font-size: 70px;
     line-height: 1;
     text-transform: uppercase;
+    border-left: 5px solid #c59034;
+    padding-left: 30px;
 }
 #hero a { /*styles the start exploring link*/
     display: inline-block;
@@ -89,6 +104,13 @@ main {
     color: white;
     text-decoration: none;
     border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+#hero > a:hover {
+    background-color: #c59034;
+    color: #white;
+    scale: 1.05;
+    transition: scale 0.3s;
 }
 
 /* this is the main featured section */
@@ -98,7 +120,8 @@ main {
     align-items: center;
     gap: 60px;
 }
-#featured a {
+
+#featured > a {
     width: 50%;
 }
 .featured-image {
@@ -106,13 +129,16 @@ main {
     height: 400px;
     background-color: #111;
     border-radius: 10px;
+    background-image: url(/images/centralPA/poconos.jpg);
+    background-size: cover;
+    background-position: center;
 }
 .featured-text {
     width: 50%;
 }
 .featured-text h2 {
     margin: 0 0 5px;
-    font-size: 30px;
+    font-size: 45px;
     color: #283047
 }
 .featured-text a {
@@ -145,6 +171,10 @@ main {
     justify-content: center;
     gap: 30px;
 }
+#attractions > a {
+    text-decoration: none;
+    color: #283047;
+}
 .card {/* this is the card box*/
     width: 30%;
     background-color: #eee;
@@ -156,11 +186,20 @@ main {
 }
 .img-holder {
     width: 100%;
-    object-fit: fill;
-    background-color: #111;
+    height : 250px;
+    overflow: hidden;
+    object-fit: cover;
+    background-color: #eee;
+}
+.img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.img-holder a {
     display: block;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 .title {
     margin: 10px 20px;
@@ -174,8 +213,8 @@ main {
 .title h3 {
     margin: 0 0 10px;
     font-size: 18px;
-    color: #c59034
-    font-family: "times new roman", serif;
+    color: #283047;
+    font-family: "Times New Roman", serif;
 }
 
 /* this is the description for the card */
@@ -186,7 +225,9 @@ main {
     margin: 0 0 10px;
     font-size: 14px;
     line-height: 1.5;
-    color: #111;
+    color: #575353;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 .card .link {
     margin: 0 20px;
@@ -203,31 +244,40 @@ main {
 
 /* this is the quote section */
 #quote {
-    padding: 100px 150px;
+    padding: 150px 150px;
     background-color: #283047;
     color: #eee;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
 
-    background-image: url();
+    background-image: url(/images/centralPA/hillsofpa.jpg);
     background-size: cover;
     background-position: center;
 }
 #quote blockquote {
-    margin: 0;
-    font-size: 30px;
-    line-height: 1.5;
+    margin: 10px;
+    font-size: 40px;
+    line-height: 1.2;
+    font-family: "Arial", Sans-serif;
+    border-left: 5px solid #c59034;
+    border-right: 5px solid #c59034;
+    padding: 0 40px;
+    background-color: rgba(0, 0, 0, 0.251);
+    padding: 20px;
 }
 #quote p {
     margin: 20px 0 0;
     font-size: 18px;
     line-height: 1.5;
+    color: #eee;
+    align-items: center;
+    padding-top: 20px;
 }
 
 /* this is the find what you love section */
 
 #interest {
-    padding: 100px 60px;
+    padding: 60px 60px 100px;
     background-color: #f2ece5;
     display: flex;
     flex-wrap: wrap;
@@ -239,10 +289,26 @@ main {
 }
 #interest > h2{
     width: 100%;
-    margin: 0 0 30px;
-    font-size: 30px;
+    margin: 0 0 80px;
+    font-size: 45px;
     color: #283047;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
+#interest > h2::before {
+    content: "";
+    flex-grow: 1;
+    height: 5px;
+    background-color: #c59034;
+}
+#interest > h2::after {
+    content: "";
+    flex-grow: 1;
+    height: 5px;
+    background-color: #c59034;
+}
+
 .interest-card {
     width: 22%;
     overflow: hidden;
@@ -267,6 +333,8 @@ main {
 }
 .circle-content p{
     margin: 0 0 10px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 
@@ -275,4 +343,21 @@ footer {
     background-color: #283047;
     text-align: left;
     color: #eee;
+}
+
+#logo a:hover,
+nav a:hover,
+.featured-text a:hover,
+.card a:hover,
+#attractions > a:hover,
+.circle-title a:hover {
+    color: #c59034;
+    transition: color 0.3s;
+    scale: 1.05;
+}
+.card .link a:hover,
+#featured .link a:hover {
+    color: #8a465a;
+    transition: color 0.3s;
+    scale: 1.05;
 }
