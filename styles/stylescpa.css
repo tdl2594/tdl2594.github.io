@@ -96,7 +96,14 @@ main {
     text-transform: uppercase;
     border-left: 5px solid #c59034;
     padding-left: 30px;
-    font-family: 
+    font-family: .noto-serif-<uniquifier> {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 }
 #hero a { /*styles the start exploring link*/
     display: inline-block;
