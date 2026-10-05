@@ -34,7 +34,7 @@ header {
 }
 .logo a:hover {
     color: #72856e;
-    transition: color 0.3s;
+    transition: color 0.3s;           
 }
 nav ul {
     display: flex;
@@ -101,6 +101,7 @@ main {
     object-fit: cover;
     display: block;
 }
+
 .card-holder {
     display: grid;
     grid-template-columns: 1fr 1fr;
