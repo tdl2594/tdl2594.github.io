@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | cleanmygun.com</title>
+    <link rel="stylesheet" href="../../styles/stylescleanmg.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo"><a href="./index.html">Cleanmygun<span>.com</span></a></div>
+        <button id="menu-toggle">☰</button>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="field-strip.html">Field Strip</a></li>
+                <li><a href="404.html">Detail Strip</a></li>
+                <li><a href="404.html">Buy Supplies</a></li>
+            </ul>
+        </nav>
+    </header>
+        <section id="page-layout">
+
+        </section>
+            <main>
+                <section id="hero">  
+                    <div id="hero-text">
+                        <h1>FIREARM CLEANING<br> MADE SIMPLE</h1>
+                            <p>Learn the proper techniques for keeping your firearm in top condition. Regular cleaning of your firearm is essential for maintaining its performance and longevity. A clean gun is a reliable gun. Follow our guides for step-by-step instructions.</p>
+                    </div>
+                    <div id="hero-image">
+                            <img src="../../images/cleanmg/1911.jpg" alt="Comparison of clean and dirty gun" class="hero-image">
+                    </div>
+                </section>
+                <section class="content">
+                    <div class="content-header"><p>CHOOSE A CLEANING GUIDE</p><hr></div>
+                    <div class="card-holder">
+                        <div class="guide-card">
+                            <h3>Field Strip Cleaning</h3>
+                            <p>Learn how to field strip your firearm for a basic cleaning. This guide will walk you through the steps to disassemble your gun, clean the essential parts, and reassemble it safely.</p>
+                            <a href="field-strip.html" class="guide-button">Start Guide &rarr;</a>
+                    </div>
+                    <div class="guide-card">
+                        <h3>Detail Strip Cleaning</h3>
+                        <p>For a more thorough cleaning, follow our detail strip guide. This guide covers the complete disassembly of your firearm, allowing you to clean every nook and cranny for optimal performance.</p>
+                        <a href="404.html" class="guide-button">Start Guide &rarr;</a>
+                    </div>
+                    </div>           
+                </section>
+            </main>  
+      <script>
+    const menuToggle = document.getElementById("menu-toggle");
+
+    menuToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("nav-open");
+
+        if (document.body.classList.contains("nav-open")) {
+            menuToggle.innerHTML = "✕";
+        } else {
+            menuToggle.innerHTML = "☰";
+        }
+    });
+</script>
+</body>
+</html>

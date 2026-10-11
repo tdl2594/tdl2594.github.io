@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reassembly | cleanmygun.com</title>
+    <link rel="stylesheet" href="../../styles/stylescleanmg2.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo"><a href="./index.html">Cleanmygun<span>.com</span></a></div>
+        <button id="menu-toggle">☰</button>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="field-strip.html">Field Strip</a></li>
+                <li><a href="404.html">Detail Strip</a></li>
+                <li><a href="404.html">Buy Supplies</a></li>
+            </ul>
+        </nav>
+    </header>
+        <main>
+            <section id="side-bar">
+                <ul> 
+                    <h2>Field Strip Guide</h2>
+                    <li><a href="field-strip.html">1. Safety & Setup</a></li>
+                    <li><a href="field-strip02.html">2. Gather Supplies</a></li>
+                    <li><a href="field-strip03.html">3. Disassemble</a></li>
+                    <li><a href="field-strip04.html">4. Cleaning</a></li>
+                    <li><a href="field-strip05.html">5. Lubricate</a></li>
+                    <li class="active"><a href="field-strip06.html">6. Reassemble</a></li>
+                    <li><a href="field-strip07.html">7. Final Check</a></li>
+                </ul>
+            </section>
+            <section id="content">
+                    <div id="container">   
+                        <h1>6. REASSEMBLE</h1>
+                        <p>Make sure your firearm is unloaded and you are working in a clean well lit area. Follow Safety guidelines before beginning the cleaning process.</p>
+                        <img src="../../images/cleanmg/1911.jpg" alt="1911 Field Strip" class="guide-image">
+                            
+                            <div class="text"><h3>Clear the Workspace</h3>
+                                <P>Keep ammunition away from the cleaning area. Preferably, all ammunition should be in a separate room.</P>
+                            </div>
+                            <div class="text"><h3>Confirm it is Unloaded</h3>
+                                <P>Remove the magazine and check the chamber to ensure there is no ammunition in the firearm.</P>
+                            </div>
+
+                            <div class="text"><h3>Follow the Manual</h3>
+                                <P>Always refer to the firearm's manual for specific instructions on disassembly and cleaning.</P>
+                            </div>
+                            <div class="text"><h3>Wear Protective Gear</h3>
+                                <P>Wear safety glasses to protect your eyes from cleaning solvents and debris. Gloves can also be worn to protect your hands from chemicals.</P>
+                            </div>    
+                            
+                            <div class="button-container">
+                                <a href="field-strip05.html" class="guide-button">Back</a><a href="field-strip07.html" class="guide-button">Next</a>
+                            </div>
+                    </div>
+            </section>
+        </main>
+      <script>
+    const menuToggle = document.getElementById("menu-toggle");
+
+    menuToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("nav-open");
+
+        if (document.body.classList.contains("nav-open")) {
+            menuToggle.innerHTML = "✕";
+        } else {
+            menuToggle.innerHTML = "☰";
+        }
+    });
+</script>
+</body>
+</html>
