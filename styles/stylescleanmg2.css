@@ -45,6 +45,7 @@ nav ul {
     gap: 35px;
     list-style: none;
     margin: 0;
+    text-align: right;
 } 
 nav ul li {
     min-width: 110px;
@@ -105,7 +106,7 @@ main {
     width: 100%;
     box-sizing: border-box;
     padding: 18px 30px;
-    text-align: center;
+    text-align: left;
 }
 #side-bar li:hover {
     background-color: white;
@@ -155,12 +156,16 @@ main {
     margin-left: 28px;
     font-size: 24px;
     line-height: 1.35;
-    color: rgb(68, 66, 66);
+    color:  rgb(69, 68, 68);
 }
 #content #container .text {
     line-height: 20px;
     padding-bottom: 20px;
     max-width: 800px;
+    color: rgb(69, 68, 68) ;
+}
+#content #container .text h3{
+    color: #313E2E;
 }
 .button-container {
     display: flex;
