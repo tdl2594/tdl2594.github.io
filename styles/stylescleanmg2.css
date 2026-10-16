@@ -89,9 +89,10 @@ main {
 }
 #side-bar h2 {
     color: #3d302d;
-    text-align: center;
+    text-align: left;
+    padding-left: 20px;
     align-items: center;
-    font-size: clamp(25px, 2.5vw, 30px);
+    font-size: 25px;
 }
 #side-bar  ul{
     color: #3d302d;
@@ -156,7 +157,7 @@ main {
     margin-left: 28px;
     font-size: 24px;
     line-height: 1.35;
-    color:  rgb(69, 68, 68);
+    color: rgb(96, 95, 95);
 }
 #content #container .text {
     line-height: 20px;
