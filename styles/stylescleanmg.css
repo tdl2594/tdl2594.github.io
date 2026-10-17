@@ -177,7 +177,11 @@ main {
 .guide-button:hover {
     background-color: #5a6b57;
 }  
-
+nav a.active {
+    font-weight: 700;
+    border-bottom: 2px solid currentColor;
+    color: #72856e;
+}
 
 /* mobile */
 @media (max-width: 770px) {
