@@ -118,6 +118,7 @@ main {
 nav a.active {
     font-weight: 700;
     border-bottom: 2px solid currentColor;
+    color: #72856e;
 }
 #side-bar li.active {
     background-color: white;
