@@ -56,6 +56,11 @@ nav a {
     text-decoration: none;
     transition: color 0.3s ease;
 }
+nav a.active {
+    font-weight: 700;
+    border-bottom: 2px solid currentColor;
+    color: #72856e;
+}
 nav a:hover {
     color: #72856e;
     font-weight: bold;
@@ -115,11 +120,7 @@ main {
     transition: background-color 0.3s ease, color 0.3s ease;
     scale: 1.05;
 }
-nav a.active {
-    font-weight: 700;
-    border-bottom: 2px solid currentColor;
-    color: #72856e;
-}
+
 #side-bar li.active {
     background-color: white;
     transition: background-color 0.3s ease, color 0.3s ease;

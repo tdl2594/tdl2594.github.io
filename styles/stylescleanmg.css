@@ -62,6 +62,11 @@ nav a:hover {
     font-weight: bold;
     transition: color 0.3s ease;
 }
+nav a.active {
+    font-weight: 700;
+    border-bottom: 2px solid currentColor;
+    color: #72856e;
+}
 #menu-toggle {
     display: none;
     background: none;
@@ -172,11 +177,7 @@ main {
 .guide-button:hover {
     background-color: #5a6b57;
 }  
-nav a.active {
-    font-weight: 700;
-    border-bottom: 2px solid currentColor;
-    color: #72856e;
-}
+
 
 /* mobile */
 @media (max-width: 770px) {
