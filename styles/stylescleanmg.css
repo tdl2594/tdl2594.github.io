@@ -39,7 +39,7 @@ header {
     color: #72856e;      
 }
 #logo a:hover span{
-    color: white;      
+    color: #72856e;      
 }
 nav ul {
     display: flex;
@@ -101,17 +101,16 @@ main {
 }
 
 #hero-text p {
-    margin-left: 28px;
+
     max-width: 500px;
-    font-size: 24px;
+    font-size: 2em;
     line-height: 1.35;
-    color: rgb(68, 66, 66);
+    color: rgb(102, 98, 98);
 }
 
 #hero-image img {
     width: 100%;
     height: auto;
-    object-fit: cover;
     display: block;
 }
 
@@ -173,15 +172,22 @@ main {
 .guide-button:hover {
     background-color: #5a6b57;
 }  
-
+nav a.active {
+    font-weight: 700;
+    border-bottom: 2px solid currentColor;
+}
 
 /* mobile */
 @media (max-width: 770px) {
 
+    nav a.active {
+    font-weight: 700;
+    background-color: #ffffff;
+    color: #3E322E;
+    }
     header {
         flex-wrap: wrap;
             padding: 15px 5%;
-
     }
 
     #menu-toggle {
@@ -210,13 +216,14 @@ main {
         padding: 10px 0;
     }
     nav a {
-        display: block;
+        display: inline-block;
         width: 100%;
         text-align: center;
         padding: 10px 0;
         color: white;
         transition: color 0.3s ease, background-color 0.3s ease;
     }
+
     nav a:hover {
         color: #72856e;
         font-weight: bold;
@@ -238,15 +245,16 @@ main {
     margin-bottom: 20px;}    
 
     #hero {
-        display: flex;
+        display: block;
         flex-direction: column;
         align-items: left;
+        margin: 0;
     }
     #hero-text h1 {
+        margin: 0 auto;
         border-left: 10px solid #72856e;
         text-align: left;
         padding-left: 10px;
-        align-items: left;
     }
     #hero-image img {
         height: auto;
@@ -254,10 +262,21 @@ main {
     .card-holder {
         grid-template-columns: 1fr;
     }
+    nav a.active {
+    font-weight: 700;
+    border-bottom: 2px solid currentColor;
+    background-color: #ffffff;
+}
 }
 
 
 @media (max-width: 900px) {
+    nav a.active {
+    font-weight: 700;
+    background-color: #ffffff;
+    color: #3E322E;
+    }
+
      header {
         flex-wrap: wrap;
             padding: 15px 5%;
@@ -290,7 +309,7 @@ main {
         padding: 10px 0;
     }
     nav a {
-        display: block;
+        display: inline-block;
         width: 100%;
         text-align: center;
         padding: 10px 0;

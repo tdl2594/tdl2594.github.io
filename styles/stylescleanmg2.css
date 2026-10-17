@@ -38,7 +38,7 @@ header {
     color: #72856e;      
 }
 #logo a:hover span{
-    color: white;      
+    color: #72856e;      
 }
 nav ul {
     display: flex;
@@ -115,6 +115,10 @@ main {
     transition: background-color 0.3s ease, color 0.3s ease;
     scale: 1.05;
 }
+nav a.active {
+    font-weight: 700;
+    border-bottom: 2px solid currentColor;
+}
 #side-bar li.active {
     background-color: white;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -154,7 +158,6 @@ main {
     max-width: 750px;
 }
 #content #container>p {
-    margin-left: 28px;
     font-size: 24px;
     line-height: 1.35;
     color: rgb(96, 95, 95);
@@ -166,7 +169,7 @@ main {
     color: rgb(69, 68, 68) ;
 }
 #content #container .text h3{
-    color: #313E2E;
+    color: #5a6b57;
 }
 .button-container {
     display: flex;
@@ -192,6 +195,12 @@ main {
 
 /* mobile */
 @media (max-width: 770px) {
+
+    nav a.active {
+    font-weight: 700;
+    background-color: #ffffff;
+    color: #3E322E;
+    }
 
     header {
         flex-wrap: wrap;
