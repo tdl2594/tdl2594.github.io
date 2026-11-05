@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-img{
+img{ 
     max-width: 100%;
     height: auto;
 }
@@ -18,9 +18,13 @@ body {
     padding: 12px 20px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     background-color: #c76b39;
     border-radius: 10px;
+    color:#fff;
+    width: 125px;
+}
+.button:hover {
+    background-color: #c5774e;
     color:#fff;
 }
 main {
@@ -29,16 +33,18 @@ main {
     width: 100%;
     flex-direction: column;
 }
-.active {
-    font-weight: 700;
-    border-bottom: 2px solid currentColor;
-    color: #c76b39;
-}
+
 h2 {
     font-size: 3rem;
     color: #490000;
     text-align: center;
+    padding-bottom: 50px;
 }
+h4 {
+    font-size: 1.5rem;
+    color: #486284;
+}
+
 
 
 
@@ -51,31 +57,82 @@ h2 {
     font-size: 50px;
     cursor: pointer;
 }
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
 nav ul {
     text-decoration: none;
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 48px;
 }
 nav {
     display: flex;
     width: 100%;
-    height: 72px;
-    padding: 8px 50px;
+    height: 70px;
+    padding: 8px 20px;
     justify-content: space-between;
     align-items: center;
     background: #490000;
     margin: 0 auto;
     color: #fff;
+
+}
+nav>a {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 20px;
+}
+nav li a {
+    display: block;
+    padding: 0 30px;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+nav li {
+    padding: 10px 0;
+}
+nav li.active a {
+    color: #c76b39;
+    border-bottom-color: currentColor;
+    background-color: #490000;
+}
+nav li a:hover {
+    color: #c76b39;
+    border-bottom-color: currentColor;
+    background-color: #490000;
 }
 
 /* HERO SECTION */
 #hero {
     height: 659px;
     width: 100%;
-    background: grey;
-    margin-bottom: 50px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../tdl2594.github.io/images/brewsandbonds/beans.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 150px;
+}
+#hero-text {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    align-items: top;
+}
+#hero-text> h1 {
+    color:#ffffff;
+    font-size: 5.5rem;
+    margin: 0;
+    align-items: center;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    line-height: 1;
 }
 
 /* FEATURED SECTION */
@@ -84,8 +141,11 @@ nav {
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
+    flex-direction: space-between;
+    gap: 50px;
 }
+
 .featured-text {
     display: flex;
     width: 40%;
@@ -94,28 +154,30 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding-right: 50px;
 }
-#featured > a {
-    width: 60%;
-}
-.featured-image {
+
+#featured a img {
     width: 100%;
-    height: 500px;
-    background-color: #111;
+    height: auto;
     background-size: cover;
     background-position: center;
+    padding: 50px;
+    align-items: right;
 }
 .featured-text h1 {
     margin: 0 0 5px;
-    font-size: 5rem;
+    font-size: 4rem;
     color: #490000;
 }
+
 
 /* SPECIAL SECTION */
 #specials {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 150px;
 }
 .drinks {
     height: 600px;
@@ -123,6 +185,7 @@ nav {
     align-content: center;
     justify-content: center;
     padding-left: 50px;
+    margin-bottom: 50px;
 }
 .drinks img{
     height: 500px;
@@ -130,7 +193,48 @@ nav {
 }
 
 
+/* Events */
+.events {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+.events img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+.event-text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 28px;
+}
+.event-date {
+    background-color: #486284;
+    color: #fff;
+    padding: 10px;
+    width: 60px;
+    align-items: center;
+    align-content: center;
+    align-self: top-center;
+}
+.event-date h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.event-details {
+    max-width: 500px;
+}
 
+/* FOOTER */
 footer {
     display: flex;
     width: 100%;
@@ -139,7 +243,6 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 96px;
     flex-shrink: 0;
     background-color: #490000;
     color:#fff;
@@ -158,16 +261,32 @@ footer {
         display: flex;
         width: 100%;
         height: 72px;
-        padding: 8px 50px;
+        padding: 8px 20px;
         background: #490000;
         margin: 0 auto;
         color: #fff;
+        align-items: center;
     }
-     body.nav-open nav {
-        grid-template-rows: 1fr;
+     body.nav-open nav ul {
+        display: flex;
+        position: absolute;
+
+        top: 72px;
+        left: 0;
+
+        width: 100%;
+        margin: 0;
+        padding: 25px;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+
+        background-color: #490000;
+        z-index: 1000;
     }
     .button {
-        align-items: right;
+        align-items: center;
     }
     #featured {
         width: 100%;
@@ -185,7 +304,10 @@ footer {
         justify-content: center;
         align-items: center;
     }
-    .featured-image {
+    #featured img {
+        width: 100%;
+    }
+    #featured>a {
         width: 100%;
     }
     #specials {
@@ -193,14 +315,54 @@ footer {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        padding-bottom: 75x;
+    }
+    .drinks {
+        padding-bottom: 50px;
     }
     footer {
-        display: flex;
-    
+        display: inline-block;
         flex-direction: column;
         align-items: left;
         text-align: left;
-        align-self: stretch;
+        color: #fff;
+    }
+    .footercontent h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+        color: #fff;
+    }
+    .events {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
     }
 
+    .events img {
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: cover;
+    }
+    .event-text {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        gap: 30px;
+    }
+    .event-details h3 {
+        margin-top: 0;
+    }
+    .event-date {
+        
+        margin-left: 50px;
+    }
+    .event-details {
+        align-items: left;
+        text-align: left;
+        margin: 0 50px 0 0;
+    }
 }
