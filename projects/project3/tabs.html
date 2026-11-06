@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --text: light-dark(#1c2024, #edeef0);
+        --muted: light-dark(#60646c, #b0b4ba);
+        --bg: light-dark(#ffffff, #111113);
+        --hover: light-dark(#f0f0f3, #212225);
+        --border: light-dark(#d9d9e0, #363a3f);
+        --accent: light-dark(#0d74ce, #70b8ff);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 2rem 1rem;
+        background: var(--bg);
+        color: var(--text);
+        font: 1rem/1.6 system-ui, sans-serif;
+      }
+
+      .tabs {
+        max-width: 60rem;
+        margin: 0 auto;
+      }
+
+      /* Tabs (768px and up) */
+      .tabs__list {
+        display: flex;
+        overflow-x: auto;
+        box-shadow: inset 0 -1px 0 var(--border);
+      }
+
+      .tabs__tab {
+        flex: none;
+        padding: 0.75rem 1.25rem;
+        border: 0;
+        border-bottom: 2px solid transparent;
+        background: none;
+        color: var(--muted);
+        font: inherit;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .tabs__tab:hover {
+        color: var(--text);
+        background: var(--hover);
+      }
+
+      .tabs__tab[aria-selected="true"] {
+        border-bottom-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* Accordion (767px and below) */
+      .tabs__heading {
+        margin: 0;
+        border-bottom: 1px solid var(--border);
+        font: inherit;
+      }
+
+      .tabs__trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+        min-height: 3rem;
+        padding: 0.75rem 0.5rem;
+        border: 0;
+        background: none;
+        color: inherit;
+        font: inherit;
+        font-weight: 500;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .tabs__trigger:hover {
+        background: var(--hover);
+      }
+
+      .tabs__trigger::after {
+        content: "";
+        flex: none;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-right: 0.25rem;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: translateY(-25%) rotate(45deg);
+        transition: transform 0.4s ease-out;
+      }
+
+      .tabs__trigger[aria-expanded="true"]::after {
+        transform: translateY(25%) rotate(-135deg);
+      }
+
+      .tabs__panel {
+        padding: 1.25rem 0.5rem;
+      }
+
+      .tabs__panel-inner > :first-child {
+        margin-top: 0;
+      }
+
+      .tabs__panel-inner > :last-child {
+        margin-bottom: 0;
+      }
+
+      .tabs__tab:focus-visible,
+      .tabs__trigger:focus-visible,
+      .tabs__panel:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: -2px;
+      }
+
+      /* The .is-ready guard keeps every section readable if the script doesn't run. */
+      @media (min-width: 768px) {
+        .tabs.is-ready .tabs__heading {
+          display: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .tabs__list {
+          display: none;
+        }
+
+        .tabs__panel {
+          box-shadow: inset 0 -1px 0 var(--border);
+        }
+
+        /* [hidden] stays rendered here so closing can animate; visibility removes it from tab order. */
+        .tabs.is-ready .tabs__panel {
+          display: grid;
+          grid-template-rows: 1fr;
+          transition:
+            grid-template-rows 0.4s ease-out,
+            padding-block 0.4s ease-out,
+            visibility 0.4s ease-out;
+        }
+
+        .tabs.is-ready .tabs__panel[hidden] {
+          grid-template-rows: 0fr;
+          padding-block: 0;
+          visibility: hidden;
+        }
+
+        .tabs.is-ready .tabs__panel-inner {
+          min-height: 0;
+          overflow: hidden;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .tabs__trigger::after,
+        .tabs.is-ready .tabs__panel {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add a section by adding a heading + panel pair. The tab bar is built from the headings,
+         and each heading's unique id is that section's permalink (#overview). -->
+    <div class="tabs" data-tabs data-tabs-label="Product information">
+      <h2 class="tabs__heading" id="overview">
+        <button class="tabs__trigger" type="button">Overview</button>
+      </h2>
+      <div class="tabs__panel">
+        <div class="tabs__panel-inner">
+          <p>Overview content goes here.</p>
+        </div>
+      </div>
+
+      <h2 class="tabs__heading" id="features">
+        <button class="tabs__trigger" type="button">Features</button>
+      </h2>
+      <div class="tabs__panel">
+        <div class="tabs__panel-inner">
+          <p>Features content goes here.</p>
+        </div>
+      </div>
+
+      <h2 class="tabs__heading" id="pricing">
+        <button class="tabs__trigger" type="button">Pricing</button>
+      </h2>
+      <div class="tabs__panel">
+        <div class="tabs__panel-inner">
+          <p>Pricing content goes here.</p>
+        </div>
+      </div>
+
+      <h2 class="tabs__heading" id="support">
+        <button class="tabs__trigger" type="button">Support</button>
+      </h2>
+      <div class="tabs__panel">
+        <div class="tabs__panel-inner">
+          <p>Support content goes here.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Keep this query in sync with the max-width media query in the CSS.
+      const accordionQuery = window.matchMedia("(max-width: 767px)");
+
+      document.querySelectorAll("[data-tabs]").forEach((root, rootIndex) => {
+        const triggers = [...root.querySelectorAll(".tabs__trigger")];
+        const panels = [...root.querySelectorAll(".tabs__panel")];
+        const headings = [...root.querySelectorAll(".tabs__heading")];
+        let active = 0;
+        let collapsed = false; // Accordion only: tabs always show the active panel.
+
+        const list = document.createElement("div");
+        list.className = "tabs__list";
+        list.setAttribute("role", "tablist");
+        list.setAttribute("aria-label", root.dataset.tabsLabel || "Sections");
+
+        const tabs = triggers.map((trigger, i) => {
+          const baseId = `tabs-${rootIndex}-${i}`;
+          const tab = document.createElement("button");
+          tab.className = "tabs__tab";
+          tab.type = "button";
+          tab.id = `${baseId}-tab`;
+          tab.textContent = trigger.textContent.trim();
+          tab.setAttribute("role", "tab");
+          tab.setAttribute("aria-controls", `${baseId}-panel`);
+          tab.addEventListener("click", () => {
+            select(i);
+            updateUrl(hashFor(i));
+          });
+
+          trigger.id = `${baseId}-trigger`;
+          trigger.setAttribute("aria-controls", `${baseId}-panel`);
+          trigger.addEventListener("click", () => toggle(i));
+
+          panels[i].id = `${baseId}-panel`;
+          list.append(tab);
+          return tab;
+        });
+
+        function select(i) {
+          active = i;
+          collapsed = false;
+          render();
+        }
+
+        function toggle(i) {
+          if (i === active) {
+            collapsed = !collapsed;
+            render();
+            updateUrl(collapsed ? "" : hashFor(i), { replace: true });
+            return;
+          }
+          const closing = panels[active];
+          select(i);
+          updateUrl(hashFor(i));
+          revealAfter(closing, i);
+        }
+
+        function hashFor(i) {
+          return `#${headings[i].id}`;
+        }
+
+        function indexFromHash() {
+          return headings.findIndex((_, i) => hashFor(i) === location.hash);
+        }
+
+        // Fires no hashchange, so the tabs only react to Back/Forward and links.
+        function updateUrl(hash, { replace = false } = {}) {
+          if (hash === location.hash) return;
+          const url = hash || location.pathname + location.search;
+          history[replace ? "replaceState" : "pushState"](null, "", url);
+        }
+
+        // Closing a panel above this one can push its header off-screen,
+        // so check once the close animation has finished.
+        function revealAfter(closing, i) {
+          const animations = closing.getAnimations();
+          Promise.allSettled(animations.map((a) => a.finished)).then(() => {
+            if (active !== i || collapsed) return;
+            const target = accordionQuery.matches ? triggers[i] : list;
+            const { top, bottom } = target.getBoundingClientRect();
+            if (top >= 0 && bottom <= window.innerHeight) return;
+            target.scrollIntoView({
+              block: "start",
+              behavior: animations.length ? "smooth" : "auto",
+            });
+          });
+        }
+
+        function render() {
+          const isAccordion = accordionQuery.matches;
+
+          panels.forEach((panel, i) => {
+            const selected = i === active;
+            panel.hidden = !selected || (isAccordion && collapsed);
+            panel.setAttribute("role", isAccordion ? "region" : "tabpanel");
+            panel.setAttribute(
+              "aria-labelledby",
+              isAccordion ? triggers[i].id : tabs[i].id,
+            );
+            if (isAccordion) panel.removeAttribute("tabindex");
+            else panel.tabIndex = 0;
+
+            tabs[i].setAttribute("aria-selected", String(selected));
+            tabs[i].tabIndex = selected ? 0 : -1;
+            triggers[i].setAttribute(
+              "aria-expanded",
+              String(selected && !collapsed),
+            );
+          });
+        }
+
+        list.addEventListener("keydown", (event) => {
+          const last = tabs.length - 1;
+          const next = {
+            ArrowRight: active === last ? 0 : active + 1,
+            ArrowLeft: active === 0 ? last : active - 1,
+            Home: 0,
+            End: last,
+          }[event.key];
+          if (next === undefined) return;
+
+          event.preventDefault();
+          select(next);
+          // Replace so arrowing through tabs doesn't fill up the Back button.
+          updateUrl(hashFor(next), { replace: true });
+          tabs[next].focus();
+        });
+
+        accordionQuery.addEventListener("change", render);
+
+        window.addEventListener("hashchange", () => {
+          const i = indexFromHash();
+          if (i < 0 && location.hash) return; // Some other anchor on the page.
+          const closing = panels[active];
+          select(Math.max(i, 0));
+          if (i >= 0) revealAfter(closing, i);
+        });
+
+        root.prepend(list);
+        root.classList.add("is-ready");
+
+        const linked = indexFromHash();
+        select(Math.max(linked, 0));
+        if (linked >= 0) revealAfter(panels[linked], linked);
+      });
+    </script>
+  </body>
+</html>

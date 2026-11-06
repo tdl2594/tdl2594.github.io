@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Brews & Bonds</title>
+    <link rel="stylesheet" href="../../styles/stylesbrews.css">
+</head>
+<body>
+    <main>
+        <header>
+         <nav>
+            <a href="./index.html"><div class="logo">Brews & Bonds</div></a>
+                <ul>
+                    <li ><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li class="active"><a href="./aboutus.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            <div><a href="#" class="button"> Order Now</a></div>
+            <button id="menu-toggle">☰</button>
+        </nav>
+        </header>
+        
+        
+        
+        <footer>
+                <div class="footcontent">
+                    <h3>Brews & Bonds</h3>
+                    <p>Your next connection is already brewing.</p>
+                    <p><b>Location:</b><br> 122 North 2nd Street <br>Harrisburg, Pa 17104</p>
+                </div>
+                <div class="footcontent">
+                    <h3><b>Store Hours</b></h3>
+                    <b>Monday:</b> 8am-11pm<br>
+                    <b>Tuesday:</b>  8am-11pm<br>
+                    <b>Wednesday:</b>  8am-11pm<br>
+                    <b>Thursday:</b>  8am-11pm<br>
+                    <b>Friday:</b>  8am-11pm<br>
+                    <b>Saturday:</b>  10am-10pm<br>
+                    <b>Sunday:</b>  10am-10pm</p>
+                </div>
+        </footer>
+    </main>
+    <script>
+    const menuToggle = document.getElementById("menu-toggle");
+
+    menuToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("nav-open");
+
+        if (document.body.classList.contains("nav-open")) {
+            menuToggle.innerHTML = "x";
+        } else {
+            menuToggle.innerHTML = "☰";
+        }
+    });
+</script>
+</body>
+</html>
