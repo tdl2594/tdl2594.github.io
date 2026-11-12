@@ -128,9 +128,10 @@ nav li a:hover {
 #hero-text {
     height: 100%;
     width: 100%;
-    display: inline-block;
+    display: inline-flex;
     justify-content: center;
     align-items: top;
+    flex-direction: column;
 }
 #hero-text> h1 {
     color:#ffffff;
@@ -142,6 +143,18 @@ nav li a:hover {
     padding-right: 50px;
     text-align: center;
     line-height: 1;
+}
+ #hero-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #c76b39;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    width: 125px;
+    justify-content: center;
+    align-self: center;
 }
 
 /* FEATURED SECTION */
